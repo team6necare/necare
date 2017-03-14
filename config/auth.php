@@ -64,6 +64,7 @@ return [
     |
     */
 
+	/*this code replaced with the one below by CMM on 22 Feb 2017, role configuration
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
@@ -75,6 +76,21 @@ return [
         //     'table' => 'users',
         // ],
     ],
+	*/
+	
+	//below code added by CMM 22 on Feb 2017 for role configurations
+	'providers' => [
+		'users' => [
+			'driver' => 'eloquent',
+			//'model' => Namespace\Of\Your\User\Model\User::class,
+			'model' => App\User::class,			
+			'table' => 'users',
+		],
+    ],
+	
+	
+	
+	
 
     /*
     |--------------------------------------------------------------------------

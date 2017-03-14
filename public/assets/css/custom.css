@@ -1,0 +1,28 @@
+
+.navbar-brand
+{
+	
+	font-size:25px;
+	font-style: oblique;
+	font-weight:bold;
+	height:85px;
+	padding-left: -5px;
+}
+
+.navbar-nav
+{
+	padding-top:20px;
+	font-size:15px;
+	
+}
+
+.container
+{
+	width: 1500px;
+}
+
+.table 
+{
+
+	background-color: #ccc;
+}

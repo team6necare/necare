@@ -55,7 +55,11 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+   /* 'from' => ['address' => null, 'name' => null],
+    replaced with code below by CMM
+
+   */
+     'from' => ['address' => env('MAIL_USERNAME'), 'name' =>env('NAME')],
 
     /*
     |--------------------------------------------------------------------------

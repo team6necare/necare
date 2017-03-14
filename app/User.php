@@ -4,8 +4,14 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+//added the following line for roles 22 Feb 2017, by CMM
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+
 class User extends Authenticatable
 {
+	//added the following line for roles 22 Feb 2017, by CMM
+	use EntrustUserTrait;
+	
     /**
      * The attributes that are mass assignable.
      *

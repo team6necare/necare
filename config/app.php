@@ -156,9 +156,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 		
-	   // ...
+	    //... Below added on 20 Feb 2017, by CMM for forms setup
 		Collective\Html\HtmlServiceProvider::class,
 		// ...
+		
+		//... Below added on 22 Feb 2017, by CMM for roles
+		Zizaco\Entrust\EntrustServiceProvider::class,
  
     ],
 
@@ -207,11 +210,13 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 		
 		
-		// ...
-			'Form' => Collective\Html\FormFacade::class,
-			'Html' => Collective\Html\HtmlFacade::class,
+		//... Below added on 20 Feb 2017, by CMM for forms setup
+		'Form' => Collective\Html\FormFacade::class,
+		'Html' => Collective\Html\HtmlFacade::class,
 		// ...
 
+		//... Below added on 22 Feb 2017, by CMM for roles
+		'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
     ],
 
 ];
