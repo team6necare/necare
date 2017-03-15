@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ActivityType extends Model
 {
-    protected $table = 'Activity_Types';
+    protected $table = 'activity_types';
     public $fillable = ['name','description', 'min_participants'];
 }
