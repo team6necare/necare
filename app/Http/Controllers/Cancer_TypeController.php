@@ -29,7 +29,7 @@ class Cancer_TypeController extends Controller
 
     public function index (Request $request)
     {
-        $cancer_types = Cancer_Type::orderBy('id','DESC')->paginate(5); //was $cancer_types = Cancer_Types::orderBy('id','DESC')->paginate(5);
+        $cancer_types = Cancer_Type::orderBy('id','name')->paginate(5); //was $cancer_types = Cancer_Types::orderBy('id','DESC')->paginate(5);
         return view('cancer_types.index', compact('cancer_types'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
 

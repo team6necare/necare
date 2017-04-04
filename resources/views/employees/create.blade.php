@@ -26,7 +26,7 @@
 	     <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Employee Number:</strong>
-                {!! Form::text('employee_number', null, array('placeholder' => 'employee_number','class' => 'form-control')) !!}
+                {!! Form::text('employee_number', null, array('placeholder' => 'Employee_number','class' => 'form-control')) !!}
             </div>
         </div>
 	

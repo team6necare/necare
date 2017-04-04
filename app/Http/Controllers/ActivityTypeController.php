@@ -44,6 +44,7 @@ class ActivityTypeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            
             'name' => 'required',
             'description' => 'required',
             'min_participants'=> 'required',
@@ -89,6 +90,7 @@ class ActivityTypeController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+           
             'name' => 'required',
             'description' => 'required',
             'min_participants' => 'required',

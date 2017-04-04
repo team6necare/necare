@@ -1,28 +1,78 @@
 
+.navbar
+{
+
+	width: 100%;
+
+
+}
+
 .navbar-brand
 {
 	
-	font-size:25px;
+	font-size: 140%;
 	font-style: oblique;
 	font-weight:bold;
-	height:85px;
-	padding-left: -5px;
+	height:65px;
+	padding-bottom: 0%;
+
 }
 
 .navbar-nav
 {
-	padding-top:20px;
-	font-size:15px;
+
+	font-size: 100%;
+}
+
+
+.navbar-right
+{
+
+	margin-right: 0.05%;
+}
+
+.navbar-inverse
+
+{
 	
+	background-color: #fff;
+	text-align: center;
+	border-top: 1px solid #cbcbcb;
+	padding:0;
+
+}
+
+
+.navbar-inverse .navbar-nav>li>a:hover
+{
+	color:#000;background-color:transparent
 }
 
 .container
 {
-	width: 1500px;
-}
 
+
+}
+.row
+{
+
+	width: 100%;
+}
 .table 
 {
 
 	background-color: #ccc;
 }
+
+img
+{
+
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+
+
+

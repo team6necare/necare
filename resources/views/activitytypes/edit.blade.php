@@ -26,6 +26,8 @@
 	
 	<div class="container">
 	<div class="row">
+
+	
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
@@ -42,10 +44,12 @@
 		
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Minimum Number of Participants:</strong>
-                {!! Form::text('min_participants', null, array('placeholder' => 'Min_Participants','class' => 'form-control')) !!}
+                <strong>Minimum Participants:</strong>
+                {!! Form::text('min_participants', null, array('placeholder' => 'Minimum Participants','class' => 'form-control')) !!}
             </div>
         </div>
+
+       
 		
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 				<button type="submit" class="btn btn-primary">Submit</button>

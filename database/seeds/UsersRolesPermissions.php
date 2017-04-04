@@ -102,6 +102,8 @@ class PermissionsTableSeeder extends Seeder {
 		Permission::create([ 'name' => 'activity_type-delete', 'display_name' => 'Delete an activity type', 'description' => 'User is allowed to delete an activity type',
              'created_at' => date_create(), 'updated_at' => date_create()]);
 
+    
+
 		//employee
 		Permission::create([ 'name' => 'employee-read', 'display_name' => 'Display an employee', 'description' => 'User is allowed to display an employee record',
              'created_at' => date_create(), 'updated_at' => date_create()]);

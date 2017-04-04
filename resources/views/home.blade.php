@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading" align = "Center">
                     <font size ="5"> 
-                        Guidelines
+                        Welcome !!!
                     </font>
                 </div>
 

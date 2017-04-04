@@ -16,7 +16,13 @@ class Employee extends Model
             'state',
             'zip',
             'email',
-			'work_phone',
+		'work_phone',
             'mobile_phone'
-			];
+		];
+
+      public function activitydetails() {
+            return $this->hasMany('App\Activitydetail', 'employee_id');
+
+        }
+
 }

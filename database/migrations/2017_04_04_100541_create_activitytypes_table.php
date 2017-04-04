@@ -12,13 +12,16 @@ class CreateActivityTypesTable extends Migration
      */
     public function up()
     {
-       Schema::create('activity_types', function (Blueprint $table) {
+       Schema::create
+       ('activity_types', function (Blueprint $table) 
+        {
             $table->increments('id');
-            $table->string('name')->unique();
-            $table->string('description')->unique();
+            $table->string('name');
+            $table->string('description');
             $table->integer('min_participants');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -28,6 +31,6 @@ class CreateActivityTypesTable extends Migration
      */
     public function down()
     {
-         Schema::drop('activityTypes');
+         Schema::drop('activity_types');
     }
 }

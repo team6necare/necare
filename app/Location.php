@@ -16,4 +16,10 @@ class Location extends Model
     'zip',
     'notes'
     ];
-}
+
+
+public function activities() {
+        return $this->hasMany('App\Activity', 'location_id');
+
+        }
+    }
