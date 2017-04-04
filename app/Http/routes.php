@@ -95,24 +95,24 @@ Route::group(['middleware' => ['auth']], function() {
 
 //Volunteers
 
-		Route::get('volunteers',['as'=>'volunteers.index','uses'=>'volunteerController@index','middleware' => ['permission:volunteer-read|volunteer-create|volunteer-edit|volunteer-delete']]);
-		Route::get('volunteers/create',['as'=>'volunteers.create','uses'=>'volunteerController@create','middleware' => ['permission:volunteer-create']]);
-		Route::post('volunteers/create',['as'=>'volunteers.store','uses'=>'volunteerController@store','middleware' => ['permission:volunteer-create']]);
-		Route::get('volunteers/{id}',['as'=>'volunteers.show','uses'=>'volunteerController@show']);
-		Route::get('volunteers/{id}/edit',['as'=>'volunteers.edit','uses'=>'volunteerController@edit','middleware' => ['permission:volunteer-edit']]);
-		Route::patch('volunteers/{id}',['as'=>'volunteers.update','uses'=>'volunteerController@update','middleware' => ['permission:volunteer-edit']]);
-		Route::delete('volunteers/{id}',['as'=>'volunteers.destroy','uses'=>'volunteerController@destroy','middleware' => ['permission:volunteer-delete']]);
+		Route::get('volunteers',['as'=>'volunteers.index','uses'=>'VolunteerController@index','middleware' => ['permission:volunteer-read|volunteer-create|volunteer-edit|volunteer-delete']]);
+		Route::get('volunteers/create',['as'=>'volunteers.create','uses'=>'VolunteerController@create','middleware' => ['permission:volunteer-create']]);
+		Route::post('volunteers/create',['as'=>'volunteers.store','uses'=>'VolunteerController@store','middleware' => ['permission:volunteer-create']]);
+		Route::get('volunteers/{id}',['as'=>'volunteers.show','uses'=>'VolunteerController@show']);
+		Route::get('volunteers/{id}/edit',['as'=>'volunteers.edit','uses'=>'VolunteerController@edit','middleware' => ['permission:volunteer-edit']]);
+		Route::patch('volunteers/{id}',['as'=>'volunteers.update','uses'=>'VolunteerController@update','middleware' => ['permission:volunteer-edit']]);
+		Route::delete('volunteers/{id}',['as'=>'volunteers.destroy','uses'=>'VolunteerController@destroy','middleware' => ['permission:volunteer-delete']]);
 
 
 //Victims
 
-		Route::get('victims',['as'=>'victims.index','uses'=>'victimController@index','middleware' => ['permission:victim-read|victim-create|victim-edit|victim-delete']]);
-		Route::get('victims/create',['as'=>'victims.create','uses'=>'victimController@create','middleware' => ['permission:victim-create']]);
-		Route::post('victims/create',['as'=>'victims.store','uses'=>'victimController@store','middleware' => ['permission:victim-create']]);
-		Route::get('victims/{id}',['as'=>'victims.show','uses'=>'victimController@show']);
-		Route::get('victims/{id}/edit',['as'=>'victims.edit','uses'=>'victimController@edit','middleware' => ['permission:victim-edit']]);
-		Route::patch('victims/{id}',['as'=>'victims.update','uses'=>'victimController@update','middleware' => ['permission:victim-edit']]);
-		Route::delete('victims/{id}',['as'=>'victims.destroy','uses'=>'victimController@destroy','middleware' => ['permission:victim-delete']]);
+		Route::get('victims',['as'=>'victims.index','uses'=>'VictimController@index','middleware' => ['permission:victim-read|victim-create|victim-edit|victim-delete']]);
+		Route::get('victims/create',['as'=>'victims.create','uses'=>'VictimController@create','middleware' => ['permission:victim-create']]);
+		Route::post('victims/create',['as'=>'victims.store','uses'=>'VictimController@store','middleware' => ['permission:victim-create']]);
+		Route::get('victims/{id}',['as'=>'victims.show','uses'=>'VictimController@show']);
+		Route::get('victims/{id}/edit',['as'=>'victims.edit','uses'=>'VictimController@edit','middleware' => ['permission:victim-edit']]);
+		Route::patch('victims/{id}',['as'=>'victims.update','uses'=>'VictimController@update','middleware' => ['permission:victim-edit']]);
+		Route::delete('victims/{id}',['as'=>'victims.destroy','uses'=>'VictimController@destroy','middleware' => ['permission:victim-delete']]);
 
 //Volunteer schedule
 
