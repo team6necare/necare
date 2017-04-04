@@ -49,7 +49,7 @@ class PermissionsTableSeeder extends Seeder {
            'created_at' => date_create(), 'updated_at' => date_create()]);
 	
 	
-		Permission::create([ 'name' => 'role-create', 'display_name' => 'Create', 'description' => 'User is allowed to add roles',
+		Permission::create([ 'name' => 'role-create', 'display_name' => 'Create Role', 'description' => 'User is allowed to add roles',
              'created_at' => date_create(), 'updated_at' => date_create()]);
 	
 	
