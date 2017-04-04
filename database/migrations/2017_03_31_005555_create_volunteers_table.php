@@ -25,7 +25,6 @@ class CreateVolunteersTable extends Migration
             $table->string('work_phone');
             $table->string('mobile_phone');
             $table->integer('cancer_type_id')->unsigned();
-            $table->integer('activity_id')->unsigned();
             $table->string('notes');
             $table->timestamps();
             
@@ -35,9 +34,6 @@ class CreateVolunteersTable extends Migration
            $table->foreign('cancer_type_id')->references('id')->on('cancer_types');
        });
 
-            Schema::table('volunteers', function (Blueprint $table) {
-           $table->foreign('activity_id')->references('id')->on('activity_types');
-        }); 
     }
 
     /**
