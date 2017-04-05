@@ -20,7 +20,8 @@ class Victim extends Model
 			'home_phone',
             'mobile_phone',
 			'cancer_type_id',
-			'notes'			
+			'notes'	,
+            'full_name' 		
 			];
 			
 	public function cancer_type() {
@@ -30,5 +31,11 @@ class Victim extends Model
     public function activitydetails() {
             return $this->hasMany('App\Activitydetail', 'victim_id');
 
+        }
+
+          public function getFullNameAttribute(){
+        //return preg_replace('/\s+/', ' ',$this->first_name.' '.$this->last_name);
+        $full_name = $this->first_name . " " . $this->last_name ;
+        return $full_name;
         }
 }

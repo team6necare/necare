@@ -36,12 +36,14 @@ class ActivitydetailController extends Controller
      */
     public function create()
     {
-        $activities=Activity::lists('activity_refno','id');
-        $volunteers=Volunteer::lists('volunteer_refno','id');
-        $victims=Victim::lists('victim_refno','id');
-        $employees=Employee::lists('employee_number','id');
-
-        return view('activitydetails.create', compact('activities','volunteers','victims','employees'));
+        $activities=Activity::lists('description','id');
+        $startdatetimes=Activity::lists('start_datetime','id');
+        $enddatetimes=Activity::lists('end_datetime','id');
+        $volunteers = Volunteer::all()->lists('full_name', 'id');
+        $victims = Victim::all()->lists('full_name', 'id');
+        $employees=Employee::all()->lists('full_name','id');
+        //return view('activitydetails.create', compact('activities','name','victims','employees'));
+        return view('activitydetails.create', compact('activities','volunteers','victims','employees','startdatetimes','enddatetimes'));
     }
 
     /**
@@ -79,10 +81,21 @@ class ActivitydetailController extends Controller
         //return view('victims.show',compact('victims'));
 
         $activitydetails = Activitydetail::find($id);
-         $cancer_id = $victims->cancer_type_id;
-        $cancer_types=Cancer_Type::find($cancer_id); //
 
-        return view('activitydetails.show',compact('activitydetails', 'cancer_types'));
+        $activid=$activitydetails->activity_id;
+        $activities=Activity::find($activid);
+
+        $volunteerid=$activitydetails->volunteer_id;
+        $volunteers=Volunteer::find($volunteerid);
+
+        $victimid=$activitydetails->victim_id;
+        $victims=Victim::find($victimid);
+
+        $employeeid=$activitydetails->employee_id;
+        $employees=Victim::find($employeeid);
+
+
+        return view('activitydetails.show',compact('activitydetails', 'activities','volunteers','victims','employees'));
     }
 
     /**
@@ -93,12 +106,15 @@ class ActivitydetailController extends Controller
      */
     public function edit($id)
     {
-        //$victims = Victim::find($id);
-        //return view('victims.edit',compact('victims'));
 
         $activitydetails = Activitydetail::find($id);
-        $cancer_types=Cancer_Type::lists('name', 'id'); // added plus in compact
-        return view('activitydetails.edit',compact('activitydetails', 'cancer_types'));
+        $activities=Activity::lists('description','id');
+        $startdatetimes=Activity::lists('start_datetime','id');
+        $enddatetimes=Activity::lists('end_datetime','id');
+        $volunteers = Volunteer::all()->lists('full_name', 'id');
+        $victims = Victim::all()->lists('full_name', 'id');
+        $employees=Employee::all()->lists('full_name','id');
+        return view('activitydetails.edit',compact('activitydetails', 'activities','volunteers','victims','employees','startdatetimes','enddatetimes'));
 
     }
 

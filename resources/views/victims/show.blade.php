@@ -3,7 +3,7 @@
     <div class="row">
        <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show an Victim </h2>
+                <h2> Show a Victim </h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('victims.index') }}"> Back</a>

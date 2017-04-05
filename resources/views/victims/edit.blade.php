@@ -87,7 +87,7 @@
 		
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Work Phone No.:</strong>
+                <strong>Home Phone No.:</strong>
                 {!! Form::text('home_phone', null, array('placeholder' => 'Home_Phone','class' => 'form-control')) !!}
             </div>
         </div>

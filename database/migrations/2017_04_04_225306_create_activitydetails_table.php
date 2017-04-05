@@ -17,7 +17,7 @@ class CreateActivitydetailsTable extends Migration
             $table->integer('activity_id')->unsigned();
             $table->integer('volunteer_id')->unsigned();
             $table->integer('victim_id')->unsigned();
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id')->unsigned()->nullable();
             $table->string('comments');
             $table->string('feedback');
             $table->timestamps();
