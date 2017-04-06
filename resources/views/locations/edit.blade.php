@@ -1,4 +1,4 @@
-@extends('layouts.app')
+fcit@extends('layouts.app')
  
 @section('content')
 	<div class="row">
@@ -73,7 +73,7 @@
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Notes:</strong>
-                {!! Form::text('notes', null, array('placeholder' => 'City','class' => 'form-control')) !!}
+                {!! Form::text('notes', null, array('placeholder' => 'Notes','class' => 'form-control')) !!}
             </div>
         </div>
 		

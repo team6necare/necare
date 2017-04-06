@@ -25,7 +25,7 @@ class CreateVolunteersTable extends Migration
             $table->string('work_phone');
             $table->string('mobile_phone');
             $table->integer('cancer_type_id')->unsigned();
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->timestamps();
             
         });

@@ -3,10 +3,10 @@
     <div class="row">
        <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show a Volunteer </h2>
+                <h2> Show an Employee </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('volunteers.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('employees.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -16,65 +16,55 @@
             <tbody>
           
 		    <tr>
-                <td><b>Volunteer ID</b></td>
-                <td>{{ $volunteers->volunteer_refno}}</td>
+                <td><b>Employee ID</b></td>
+                <td>{{ $employees->employee_number}}</td>
             </tr>
             
             <tr>
                 <td><b>Last Name</b></td>
-                <td>{{ $volunteers->last_name}}</td>
+                <td>{{ $employees->last_name}}</td>
             </tr>
 
             <tr>
                 <td><b>First Name</b></td>
-                <td>{{ $volunteers->first_name}}</td>
+                <td>{{ $employees->first_name}}</td>
             </tr>
 			
             <tr>
                 <td><b>Street Address</b></td>
-                <td>{{ $volunteers->street_address }}</td>
+                <td>{{ $employees->street_address }}</td>
             </tr>
 			
 			<tr>
                 <td><b>City</b></td>
-                <td>{{ $volunteers->city }}</td>
+                <td>{{ $employees->city }}</td>
             </tr>
 			
 			<tr>
                 <td><b>State</b></td>
-                <td>{{ $volunteers->state}}</td>
+                <td>{{ $employees->state}}</td>
             </tr>
 			
             <tr>
                 <td><b>Zip Code</b></td>
-                <td>{{ $volunteers->zip }}</td>
+                <td>{{ $employees->zip }}</td>
             </tr>
 			
 			<tr>
                 <td><b>Email Address</b></td>
-                <td>{{ $volunteers->email }}</td>
+                <td>{{ $employees->email }}</td>
             </tr>
 			
 			<tr>
                 <td><b>Work Phone No.</b></td>
-                <td>{{ $volunteers->work_phone }}</td>
+                <td>{{ $employees->work_phone }}</td>
             </tr>
 			
 			<tr>
                 <td><b>Mobile Phone No.</b></td>
-                <td>{{ $volunteers->mobile_phone }}</td>
+                <td>{{ $employees->mobile_phone }}</td>
             </tr>
 			
-			<tr>
-                <td><b>Cancer Type</b></td>
-                <td>{{ $volunteers->$cancer_types->name }}</td>
-            </tr>
-			
-			<tr>
-                <td><b>Notes</b></td>
-                <td>{{ $volunteers->notes }}</td>
-            </tr>
-            
             </tbody>
         </table>
     </div>

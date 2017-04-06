@@ -23,9 +23,11 @@ class RolesTableSeeder extends Seeder {
     public function run()
     {
         DB::table('roles')->delete();
-        Role::create([ 'name' => 'admin', 'display_name' => 'System Administrator', 'description' => 'The system administrator user who is allowed to manage and edit other users',
+        Role::create([ 'name' => 'admin', 'display_name' => 'A System Administrator', 'description' => 'The system administrator user who is allowed to manage and edit other users',
              'created_at' => date_create(), 'updated_at' => date_create()]);
-        Role::create([ 'name' => 'employee', 'display_name' => 'Staff Member', 'description' => 'An employee who participates in activities or who can assign a volunteer to a victim ...',
+        Role::create([ 'name' => 'employee', 'display_name' => 'An Employee', 'description' => 'An employee who participates in activities or who can assign a volunteer to a victim ...',
+             'created_at' => date_create(), 'updated_at' => date_create()]);
+		Role::create([ 'name' => 'volunteer', 'display_name' => 'A Volunteer', 'description' => 'A volunteer to help the cancer victims through activities orgnaized by NCA',
              'created_at' => date_create(), 'updated_at' => date_create()]);
     }
 }
@@ -174,19 +176,18 @@ class PermissionsTableSeeder extends Seeder {
 
 
 //activity details
-        Permission::create([ 'name' => 'activitydetail-read', 'display_name' => 'Display an activity detail', 'description' => 'User is allowed to display an activity detail',
+        Permission::create([ 'name' => 'activitydetail-read', 'display_name' => 'Display an activity appointment', 'description' => 'User is allowed to display an activity appointment',
             'created_at' => date_create(), 'updated_at' => date_create()]);
         
-        Permission::create([ 'name' => 'activitydetail-create', 'display_name' => 'Create an activity detail', 'description' => 'User is allowed to create an activity detail',
+        Permission::create([ 'name' => 'activitydetail-create', 'display_name' => 'Create an activity appointment', 'description' => 'User is allowed to create an activity appointment',
             'created_at' => date_create(), 'updated_at' => date_create()]);
         
-        Permission::create([ 'name' => 'activitydetail-edit', 'display_name' => 'Edit an activity detail', 'description' => 'User is allowed to edit an activity detail',
+        Permission::create([ 'name' => 'activitydetail-edit', 'display_name' => 'Edit an activity appointment', 'description' => 'User is allowed to edit an activity appointment',
             'created_at' => date_create(), 'updated_at' => date_create()]);
         
-        Permission::create([ 'name' => 'activitydetail-delete', 'display_name' => 'Delete an activity detail', 'description' => 'User is allowed to delete an activity detail',
+        Permission::create([ 'name' => 'activitydetail-delete', 'display_name' => 'Delete an activity appointment', 'description' => 'User is allowed to delete an activity appointment',
              'created_at' => date_create(), 'updated_at' => date_create()]);
-			 
-		
+	
    }
 }
 

@@ -26,7 +26,7 @@
 			<th>Start DateTime</th>
 			<th>End DateTime</th>
 			<th>Status</th>
-			<th>Cost</th>
+			<th>Cost ($)</th>
 			<th width="280px">Action</th>
 		</tr>
 	@foreach ($activities as $key => $activity)

@@ -19,7 +19,7 @@ class CreateActivitiesTable extends Migration
             $table->datetime('start_datetime');
             $table->datetime('end_datetime');
             $table->string('status');
-            $table->string('cost');
+            $table->string('cost')->nullable();
             $table->integer('location_id')->unsigned();
             $table->integer('activity_type_id')->unsigned();
            

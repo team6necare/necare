@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\VolunteerSchedule;
 use App\Volunteer;
+use App\Http\Requests;
 
 class VolunteerScheduleController extends Controller
 {
@@ -55,15 +56,15 @@ class VolunteerScheduleController extends Controller
               'sunday_afternoon',
               'monday_morning',
               'monday_afternoon',
-        'tuesday_morning',
+              'tuesday_morning',
               'tuesday_afternoon',
-        'wednesday_morning',
+              'wednesday_morning',
               'wednesday_afternoon',
-        'thursday_morning',
+              'thursday_morning',
               'thursday_afternoon',
-        'friday_morning',
+              'friday_morning',
               'friday_afternoon',
-        'saturday_morning',
+              'saturday_morning',
               'saturday_afternoon',     
     ]);
 
@@ -101,6 +102,11 @@ class VolunteerScheduleController extends Controller
         $volunteerschedules = VolunteerSchedule::find($id);
         $volunteers=Volunteer::lists('volunteer_refno','id');
         return view('volunteerschedules.edit',compact('volunteerschedules', 'volunteers'));
+
+
+
+
+
     }
 
     /**
@@ -112,11 +118,8 @@ class VolunteerScheduleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'volunteer_id' => 'required',
-              'valid_from' => 'required',
-              'valid_to',
-              'sunday_morning',
+        
+     /* $volunteerschedules = array('sunday_morning',
               'sunday_afternoon',
               'monday_morning',
               'monday_afternoon',
@@ -129,6 +132,88 @@ class VolunteerScheduleController extends Controller
         'friday_morning',
               'friday_afternoon',
         'saturday_morning',
+              'saturday_afternoon');
+     
+     foreach ($volunteerschedules as $volunteerschedule)
+     {
+     if (!$request->has('volunteerschedule')) {
+        $request->merge(['volunteerschedule' => 'N']);
+      
+    }
+        } */
+
+    if (!$request->has('sunday_morning')) {
+        $request->merge(['sunday_morning' => '']);
+    }
+
+
+             if (!$request->has('sunday_afternoon')) {
+        $request->merge(['sunday_afternoon' => '']);
+    }
+  
+
+             if (!$request->has('monday_morning')) {
+        $request->merge(['monday_morning' => '']);
+    }
+
+
+             if (!$request->has('monday_afternoon')) {
+        $request->merge(['monday_afternoon' => '']);
+    }
+
+                 if (!$request->has('tuesday_morning')) {
+        $request->merge(['tuesday_morning' => '']);
+    }
+
+                     if (!$request->has('tuesday_afternoon')) {
+        $request->merge(['tuesday_afternoon' => '']);
+    }
+                         if (!$request->has('wednesday_morning')) {
+        $request->merge(['wednesday_morning' => '']);
+    }
+                             if (!$request->has('wednesday_afternoon')) {
+        $request->merge(['wednesday_afternoon' => '']);
+    }
+                             if (!$request->has('thursday_morning')) {
+        $request->merge(['thursday_morning' => '']);
+    }
+                             if (!$request->has('thursday_afternoon')) {
+        $request->merge(['thursday_afternoon' => '']);
+    }
+
+                             if (!$request->has('friday_morning')) {
+        $request->merge(['friday_morning' => '']);
+    }
+
+                             if (!$request->has('friday_afternoon')) {
+        $request->merge(['friday_afternoon' => '']);
+    }
+                             if (!$request->has('saturday_morning')) {
+        $request->merge(['saturday_morning' => '']);
+    }
+
+                                 if (!$request->has('saturday_afternoon')) {
+        $request->merge(['saturday_afternoon' => '']);
+    }
+
+
+        $this->validate($request, [
+            'volunteer_id' => 'required',
+              'valid_from' => 'required',
+              'valid_to',
+              'sunday_morning',
+              'sunday_afternoon',
+              'monday_morning',
+              'monday_afternoon',
+              'tuesday_morning',
+              'tuesday_afternoon',
+              'wednesday_morning',
+              'wednesday_afternoon',
+              'thursday_morning',
+              'thursday_afternoon',
+              'friday_morning',
+              'friday_afternoon',
+              'saturday_morning',
               'saturday_afternoon',     
         ]);
 

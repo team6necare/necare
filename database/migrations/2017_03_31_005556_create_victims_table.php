@@ -22,10 +22,10 @@ class CreateVictimsTable extends Migration
             $table->string('state');
             $table->string('zip');
             $table->string('email');
-            $table->string('home_phone');
+            $table->string('home_phone')->nullable();
             $table->string('mobile_phone');
             $table->integer('cancer_type_id')->unsigned();
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->timestamps();
         });
 

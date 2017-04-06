@@ -60,7 +60,7 @@
                 <td>{{ $activities->status }}</td>
             </tr>
              <tr>
-                <td><b>Cost</b></td>
+                <td><b>Cost ($)</b></td>
                 <td>{{ $activities->cost }}</td>
             </tr>
             

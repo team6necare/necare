@@ -4,7 +4,7 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Schedule an Activity</h2>
+	            <h2>Create New Activity</h2>
 	        </div>
 	        <div class="pull-right">
 	            <a class="btn btn-primary" href="{{ route('activities.index') }}"> Back</a>
@@ -64,7 +64,7 @@
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Start DateTime:</strong>
-               {!! Form::datetime('start_datetime', Carbon\Carbon::now()->format('y-m-d H:i'), array('placeholder' => 'start_datetime','class' => 'form-control')) !!}
+               {!! Form::text('start_datetime', null,array('placeholder'=>'YYYY-MM-DD hh:mm:ss','class' => 'form-control')) !!}
             </div>
         </div>
 
@@ -72,7 +72,7 @@
             <div class="form-group">
                 <strong>End DateTime:</strong>
                
-                 {!! Form::datetime('end_datetime', Carbon\Carbon::now()->format('y-m-d H:i'), array('placeholder' => 'send_datetime','class' => 'form-control')) !!}
+                 {!! Form::text('end_datetime', null,array('placeholder'=>'YYYY-MM-DD hh:mm:ss','class' => 'form-control')) !!}
             </div>
         </div>
 
@@ -85,8 +85,8 @@
 
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Cost: </strong> 
-                {!! Form::text('cost', null, array('placeholder' => '$Cost','class' => 'form-control currency')) !!}
+                <strong>Cost ($): </strong> 
+                {!! Form::text('cost', null, array('placeholder' => 'Cost','class' => 'form-control currency')) !!}
             </div>
         </div>
 

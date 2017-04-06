@@ -40,14 +40,14 @@
  		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Valid From:</strong>
-                {!! Form::date('valid_from', null, array('placeholder' => 'Valid_from','class' => 'form-control')) !!}
+                {!! Form::date('valid_from', null, array('placeholder' => 'YYYY-MM-DD','class' => 'form-control')) !!}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Validity To:</strong>
-                {!! Form::date('valid_to', null, array('placeholder' => 'Valid_to','class' => 'form-control')) !!}
+                {!! Form::date('valid_to', null, array('placeholder' => 'YYYY-MM-DD','class' => 'form-control')) !!}
             </div>
         </div>
 		

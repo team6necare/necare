@@ -114,8 +114,40 @@
 
                         {{-- Menu for Users with Employee Role Only --}}
                         @role('employee')
-                       <!-- <li><a href="{{ route('cancer_types.index') }}">Manage Activities</a></li> -->
 
+                        <li><a href="{{ route('cancer_types.index') }}">Manage Cancer Types</a></li>
+                        <li><a href="{{ route('locations.index') }}">Manage Locations</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <i class="fa fa-btn fa-fw fa-cogs"></i>Manage Activities<span class="caret"></span></a>
+                            <ul class="dropdown-menu multi level" role="menu">
+                                <li><a href="{{ route('activitytypes.index') }}">Activity-Types Management</a></li>
+                                <li><a href="{{ route('activities.index') }}"> Activity Schedules Management</a></li>
+                                <li><a href="{{ route('activitydetails.index') }}">Victims Activity Appointment</a></li>
+                            </ul>
+                        </li>
+
+                        
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <i class="fa fa-btn fa-fw fa-cogs"></i>Manage Volunteers<span class="caret"></span></a>
+                            <ul class="dropdown-menu multi level" role="menu">
+                               <li><a href="{{ route('volunteers.index') }}">Volunteer Management</a></li>
+                               <li><a href="{{ route('volunteerschedules.index') }}">Volunteer Schedule Management</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="{{ route('victims.index')}}"> Manage victims</a></li>
+
+
+                        {{-- have to make this a drop down menu...--}}
+                        <li><a href="{{ route('employees.index') }}">Generate Emp. Reports</a></li>
+                        @endrole
+
+                        {{-- Menu for Users with Volunteer Role Only --}}
+                        @role('volunteer')
+                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 <i class="fa fa-btn fa-fw fa-cogs"></i>Manage Activities<span class="caret"></span></a>
@@ -125,20 +157,13 @@
                             </ul>
                         </li>
 
-
-
-                        {{-- have to make this a drop down menu...--}}
-                        <li><a href="{{ route('Employees.index') }}">Generate Emp. Reports</a></li>
-                        @endrole
-
-                        {{-- Menu for Users with Volunteer Role Only --}}
-                        @role('volunteer')
-                        <!--<li><a href="{{ route('cancer_types.index') }}">Manage Activities</a></li> -->
+                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <i class="fa fa-btn fa-fw fa-cogs"></i>Manage Activities<span class="caret"></span></a>
+                            <i class="fa fa-btn fa-fw fa-cogs"></i>Manage Volunteers<span class="caret"></span></a>
                             <ul class="dropdown-menu multi level" role="menu">
-                                <li><a href="{{ route('activitydetails.index') }}">Victims Activity Appointment</a></li>
+                               <li><a href="{{ route('volunteers.index') }}">Volunteer Management</a></li>
+                               <li><a href="{{ route('volunteerschedules.index') }}">Volunteer Schedule Management</a></li>
                             </ul>
                         </li>
 
