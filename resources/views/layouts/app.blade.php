@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--added by CMM ON 14 April 2017 to handle rest password on Heroku... tokenmismatchexception in verifycsrftoken.php line 67-->
+	<meta name="csrf-token" content="{{ csrf_token() }}"/>
 
     <title>NECare</title>
 
