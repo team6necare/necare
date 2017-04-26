@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\VolunteerSchedule;
 use App\Volunteer;
 use App\Http\Requests;
-
+use Auth;
 class VolunteerScheduleController extends Controller
 {
      /**
@@ -18,11 +18,25 @@ class VolunteerScheduleController extends Controller
 
     public function index (Request $request)
     {
-        
-        $volunteerschedules = VolunteerSchedule::orderBy('id','validity_from')->paginate(5); 
-        return view('volunteerschedules.index', compact('volunteerschedules'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        $volunteers = Volunteer::all();
 
+         if (Auth::check() && Auth::user()->hasRole('volunteer')) {
+        $current_user_email = Auth::user()->email;
+        //dd($current_user_email) ;
+        $current_volunteer_id = Volunteer::where('email',$current_user_email)->value('id'); 
+
+        $volunteerschedules = VolunteerSchedule::where ('volunteer_id',$current_volunteer_id) ->orderBy('id','validity_from')->paginate(5); 
+
+
+          }
+          else
+          {
+            $volunteerschedules = VolunteerSchedule::orderBy('id','validity_from')->paginate(5); 
+
+          }
+
+          return view('volunteerschedules.index', compact('volunteerschedules'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
 
     }
 
@@ -100,9 +114,27 @@ class VolunteerScheduleController extends Controller
      */
     public function edit($id)
     {
-        $volunteerschedules = VolunteerSchedule::find($id);
+
+        $volunteers = Volunteer::all();
+
+         if (Auth::check() && Auth::user()->hasRole('volunteer')) {
+        $current_user_email = Auth::user()->email;
+        //dd($current_user_email) ;
+        $current_volunteer_id = Volunteer::where('email',$current_user_email)->value('id'); 
+        $volunteerschedules = VolunteerSchedule::where ('volunteer_id',$current_volunteer_id)->find($id);
+        
          //worked but not bringing the full detail... $volunteers=Volunteer::lists('volunteer_refno', 'id');
+        $volunteers=Volunteer::get()->lists('full_name', $volunteerschedules);
+        //dd($volunteers);
+      }
+
+      else 
+      {
+
+        $volunteerschedules = VolunteerSchedule::find($id);
         $volunteers=Volunteer::get()->lists('full_name', 'id');
+      }
+
         return view('volunteerschedules.edit',compact('volunteerschedules', 'volunteers'));
 
 
