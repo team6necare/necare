@@ -119,6 +119,18 @@ class NotificationController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (!$request->has('to_all_volunteers')) {
+        $request->merge(['to_all_volunteers' => '']);
+    }
+
+      if (!$request->has('to_all_victims')) {
+        $request->merge(['to_all_victims' => '']);
+    }
+
+     if (!$request->has('to_all_employees')) {
+        $request->merge(['to_all_employees' => '']);
+    }
+
         $this->validate($request, [
             'reference_number'=>'required',
             'activity_id'=>'required',
