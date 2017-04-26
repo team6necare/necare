@@ -162,6 +162,11 @@ return [
 		
 		//... Below added on 22 Feb 2017, by CMM for roles
 		Zizaco\Entrust\EntrustServiceProvider::class,
+
+        // for PDF
+        Barryvdh\DomPDF\ServiceProvider::class,
+        // for Excel
+        Maatwebsite\Excel\ExcelServiceProvider::class,
  
     ],
 
@@ -217,6 +222,11 @@ return [
 
 		//... Below added on 22 Feb 2017, by CMM for roles
 		'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+
+        // for PDF
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        //for Excel
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

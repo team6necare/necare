@@ -35,7 +35,8 @@ class VolunteerScheduleController extends Controller
     public function create()
     {
 
-        $volunteers=Volunteer::lists('volunteer_refno', 'id');
+         //worked but not bringing the full detail... $volunteers=Volunteer::lists('volunteer_refno', 'id');
+        $volunteers=Volunteer::get()->lists('full_name', 'id');
         return view('volunteerschedules.create', compact('volunteers'));
     }
 
@@ -100,11 +101,9 @@ class VolunteerScheduleController extends Controller
     public function edit($id)
     {
         $volunteerschedules = VolunteerSchedule::find($id);
-        $volunteers=Volunteer::lists('volunteer_refno','id');
+         //worked but not bringing the full detail... $volunteers=Volunteer::lists('volunteer_refno', 'id');
+        $volunteers=Volunteer::get()->lists('full_name', 'id');
         return view('volunteerschedules.edit',compact('volunteerschedules', 'volunteers'));
-
-
-
 
 
     }

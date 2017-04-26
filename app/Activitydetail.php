@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Carbon\Carbon;
 class Activitydetail extends Model
 {
     public $fillable = [
@@ -29,6 +29,7 @@ class Activitydetail extends Model
      public function employee() {
         return $this->belongsTo('App\Employee');
     }
+
 
 
 }

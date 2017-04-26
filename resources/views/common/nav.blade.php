@@ -75,7 +75,10 @@
                          <ul class="dropdown-menu multi level" role="menu">
                         <li><a href="{{ route('activitytypes.index') }}">Activity-Types Management</a></li>
                         <li><a href="{{ route('activities.index') }}"> Activity Schedules Management</a></li>
-                        <li><a href="{{ route('activitydetails.index') }}">Victims Activity Appointment</a></li>
+                        <li><a href="{{ route('activitydetails.index') }}">Victims Activity Appointments</a></li>
+                        <li><a href="{{ route('notifications.index') }}">Notifications Management</a></li>
+                        <li><a  href="{{ url('/activitydetails/involvement') }}">Volunteer Involvement</a></li>
+
                         </ul>
                         </li>
 
@@ -91,6 +94,7 @@
                                <ul class="dropdown-menu multi level" role="menu">
                                <li><a href="{{ route('volunteers.index') }}">Volunteer Management</a></li>
                                <li><a href="{{ route('volunteerschedules.index') }}">Volunteer Schedule Management</a></li>
+
                             </ul>
                         </li>
 
@@ -106,8 +110,11 @@
                                <ul class="dropdown-menu multi level" role="menu">
 
 
-                               <li><a href="{{ route('activities.index') }}">Activities per volunteer</a></li>
-                                <li><a href="{{ route('activities.index') }}">List of pending activities</a></li>
+                               <li><a href="{{ url('/pdf/report') }}">Download Activities Pdf</a></li>
+                                <li><a href="{{ url('/ExportExcel/report') }}">Download Activities Excel</a></li>
+                                <li><a href="{{ url('/ExportCsv/report') }}">Download Activities CSV</a></li>
+                                <!--li><a href="{{ url('/word') }}">Download Word</a></li> -->
+
                             </ul>
                         </li>
                         @endrole
@@ -125,6 +132,8 @@
                                 <li><a href="{{ route('activitytypes.index') }}">Activity-Types Management</a></li>
                                 <li><a href="{{ route('activities.index') }}"> Activity Schedules Management</a></li>
                                 <li><a href="{{ route('activitydetails.index') }}">Victims Activity Appointment</a></li>
+                                <li><a href="{{ route('notifications.index') }}">Notifications Management</a></li>
+                                <li><a  href="{{ url('/activitydetails/involvement') }}">Volunteer Involvement</a></li>
                             </ul>
                         </li>
 
@@ -138,11 +147,19 @@
                             </ul>
                         </li>
 
-                        <li><a href="{{ route('victims.index')}}"> Manage victims</a></li>
+                        <li><a href="{{ route('victims.index')}}"> Manage victims</a><li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                         <i class="fa fa-btn fa-fw fa-cogs"></i>Reports<span class="caret"></span></a>
+                               <ul class="dropdown-menu multi level" role="menu">
 
 
-                        {{-- have to make this a drop down menu...--}}
-                        <li><a href="{{ route('employees.index') }}">Generate Emp. Reports</a></li>
+                               <li><a href="{{ url('/pdf/report') }}">Download Activities Pdf</a></li>
+                                <li><a href="{{ url('/ExportExcel/report') }}">Download Activities Excel</a></li>
+                                <li><a href="{{ url('/ExportCsv/report') }}">Download Activities CSV</a></li>
+                                <!--li><a href="{{ url('/word') }}">Download Word</a></li> -->
+
+                            </ul>
+                        </li>
                         @endrole
 
                         {{-- Menu for Users with Volunteer Role Only --}}
@@ -154,6 +171,8 @@
                             <ul class="dropdown-menu multi level" role="menu">
                                 <li><a href="{{ route('activities.index') }}"> Activity Schedules Management</a></li>
                                 <li><a href="{{ route('activitydetails.index') }}">Victims Activity Appointment</a></li>
+                                <li><a href="{{ route('notifications.index') }}">Manage Notifications</a></li>
+                                <li><a  href="{{ url('/activitydetails/involvement') }}">Volunteer Involvement</a></li>
                             </ul>
                         </li>
 
@@ -167,8 +186,7 @@
                             </ul>
                         </li>
 
-                        {{-- have to make this a drop down menu...--}}
-                        <li><a href="{{ route('volunteers.index') }}">Generate Vol. Reports</a></li>
+                       
                          @endrole
 
             </ul>

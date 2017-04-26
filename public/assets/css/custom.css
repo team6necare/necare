@@ -4,7 +4,6 @@
 
 	width: 100%;
 
-
 }
 
 .navbar-brand
@@ -22,6 +21,8 @@
 {
 
 	font-size: 100%;
+
+	margin: 7.5px 15px;
 }
 
 
@@ -71,7 +72,12 @@ img
 	height: auto;
 }
 
-
+@media screen and (max-width: 640px) {
+	.table {
+		overflow-x: auto;
+		display: block;
+	}
+}
 
 
 

@@ -7,7 +7,7 @@
 	            <h2>Make an Activity Appointment</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('victims.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('activitydetails.index') }}"> Back</a>
 	        </div>
 	    </div>
 	</div>
@@ -77,6 +77,8 @@
 				
 				<strong>Start DateTime:</strong>
 				{!!Form::select('activity_id', $startdatetimes,  null, ['class' => 'form-control'])!!}
+
+				
 			</div>
 		</div>
 		        <div class="col-xs-12 col-sm-12 col-md-12">

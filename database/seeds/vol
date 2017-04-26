@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+
+use App\Permission;
+
+class NotificationPermissionTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+
+    public function run()
+    {
+       //Notification
+		Permission::create([ 'name' => 'notification-read', 'display_name' => 'Display a notification', 'description' => 'User is allowed to display a notification record',
+             'created_at' => date_create(), 'updated_at' => date_create()]);
+		
+		Permission::create([ 'name' => 'notification-create', 'display_name' => 'Create a notification', 'description' => 'User is allowed to create a notification record',
+             'created_at' => date_create(), 'updated_at' => date_create()]);
+		
+		Permission::create([ 'name' => 'notification-edit', 'display_name' => 'Edit a notification', 'description' => 'User is allowed to edit a notification record',
+             'created_at' => date_create(), 'updated_at' => date_create()]);
+		
+		Permission::create([ 'name' => 'notification-delete', 'display_name' => 'Delete a notification', 'description' => 'User is allowed to delete a notification record',
+             'created_at' => date_create(), 'updated_at' => date_create()]);
+    }
+}

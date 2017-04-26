@@ -12,6 +12,7 @@
 	            <a class="btn btn-success" href="{{ route('volunteers.create') }}"> Create a New Volunteer</a>
 	            @endpermission
 	        </div>
+	      
 	    </div>
 	</div>
 	@if ($message = Session::get('success'))

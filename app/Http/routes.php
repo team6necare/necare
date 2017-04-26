@@ -76,12 +76,25 @@ Route::group(['middleware' => ['auth']], function() {
 
 //activity details
 		Route::get('activitydetails',['as'=>'activitydetails.index','uses'=>'ActivitydetailController@index','middleware' => ['permission:activitydetail-read|activitydetail-create|activitydetail-edit|activitydetail-delete']]);
+		Route::get('activitydetails/involvement',['as'=>'activitydetails.involvement','uses'=>'ActivitydetailController@involvement']);
+		Route::post('activitydetails/involvement',['as'=>'activitydetails.involvement','uses'=>'ActivitydetailController@involvement']);
+		Route::get('activitydetails/status',['as'=>'activitydetails.status','uses'=>'ActivitydetailController@status']);
+		Route::post('activitydetails/status',['as'=>'activitydetails.status','uses'=>'ActivitydetailController@status']);
+		
 		Route::get('activitydetails/create',['as'=>'activitydetails.create','uses'=>'ActivitydetailController@create','middleware' => ['permission:activitydetail-create']]);
 		Route::post('activitydetails/create',['as'=>'activitydetails.store','uses'=>'ActivitydetailController@store','middleware' => ['permission:activitydetail-create']]);
 		Route::get('activitydetails/{id}',['as'=>'activitydetails.show','uses'=>'ActivitydetailController@show']);
 		Route::get('activitydetails/{id}/edit',['as'=>'activitydetails.edit','uses'=>'ActivitydetailController@edit','middleware' => ['permission:activitydetail-edit']]);
 		Route::patch('activitydetails/{id}',['as'=>'activitydetails.update','uses'=>'ActivitydetailController@update','middleware' => ['permission:activitydetail-edit']]);
 		Route::delete('activitydetails/{id}',['as'=>'activitydetails.destroy','uses'=>'ActivitydetailController@destroy','middleware' => ['permission:activitydetail-delete']]);
+
+		Route::get('activitydetails/involvement', 'ActivitydetailController@involvement');
+		Route::post('activitydetails/status', 'ActivitydetailController@status');
+		
+		
+
+
+		
 
 //Employees
 		Route::get('employees',['as'=>'employees.index','uses'=>'EmployeeController@index','middleware' => ['permission:employee-read|employee-create|employee-edit|employee-delete']]);
@@ -104,6 +117,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::delete('volunteers/{id}',['as'=>'volunteers.destroy','uses'=>'VolunteerController@destroy','middleware' => ['permission:volunteer-delete']]);
 
 
+
 //Victims
 
 		Route::get('victims',['as'=>'victims.index','uses'=>'VictimController@index','middleware' => ['permission:victim-read|victim-create|victim-edit|victim-delete']]);
@@ -123,6 +137,27 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('volunteerschedules/{id}/edit',['as'=>'volunteerschedules.edit','uses'=>'VolunteerScheduleController@edit','middleware' => ['permission:vschedule-edit']]);
 		Route::patch('volunteerschedules/{id}',['as'=>'volunteerschedules.update','uses'=>'VolunteerScheduleController@update','middleware' => ['permission:vschedule-edit']]);
 		Route::delete('volunteerschedules/{id}',['as'=>'volunteerschedules.destroy','uses'=>'VolunteerScheduleController@destroy','middleware' => ['permission:vschedule-delete']]);
+
+
+
+//Notifications
+
+	Route::get('notifications',['as'=>'notifications.index','uses'=>'NotificationController@index','middleware' => ['permission:notification-read|notification-create|notification-edit|notification-delete']]);
+	Route::get('notifications/create',['as'=>'notifications.create','uses'=>'NotificationController@create','middleware' => ['permission:notification-create']]);
+	Route::post('notifications/create',['as'=>'notifications.store','uses'=>'NotificationController@store','middleware' => ['permission:notification-create']]);
+	Route::get('notifications/{id}',['as'=>'notifications.show','uses'=>'NotificationController@show']);
+	Route::get('notifications/{id}/edit',['as'=>'notifications.edit','uses'=>'NotificationController@edit','middleware' => ['permission:notification-edit']]);
+	Route::patch('notifications/{id}',['as'=>'notifications.update','uses'=>'NotificationController@update','middleware' => ['permission:notification-edit']]);
+	Route::delete('notifications/{id}',['as'=>'notifications.destroy','uses'=>'NotificationController@destroy','middleware' => ['permission:notification-delete']]);
+
+	//PDF
+	
+	Route::get('pdf/report','PDFcontroller@pdf');
+
+	//Excel
+	Route::get('ExportExcel/report', 'ExcelController@ExportExcel');
+	//CSV
+	Route::get('ExportCsv/report', 'ExcelController@ExportCsv');
 	
 });
 

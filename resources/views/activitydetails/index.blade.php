@@ -64,5 +64,5 @@
 		@endforeach
 	</table>
 	
-	{!! $activitydetails->render() !!}
+
 @endsection

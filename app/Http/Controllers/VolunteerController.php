@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Volunteer;
 use App\Cancer_Type;
+use Auth;
 
 class VolunteerController extends Controller
 {
@@ -18,11 +19,22 @@ class VolunteerController extends Controller
 
     public function index (Request $request)
     {
-               
-        $volunteers = Volunteer::orderBy('id','last_name')->paginate(5); 
+        $volunteers = Volunteer::all();
+
+         if (Auth::check() && Auth::user()->hasRole('volunteer')) {
+        $current_user_email = Auth::user()->email;
+        //dd($current_user_email) ;
+        $current_volunteer_id = Volunteer::where('email',$current_user_email)->value('id');      
+        $volunteers = Volunteer:: where ('id',$current_volunteer_id)->orderBy('id','last_name')->paginate(5); 
+     
+        }
+        else
+        {
+             $volunteers = Volunteer::orderBy('id','last_name')->paginate(5); 
+
+        }
         return view('volunteers.index', compact('volunteers'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
-
 
     }
 
@@ -56,11 +68,11 @@ class VolunteerController extends Controller
             'state' => 'required',
             'zip' => 'required',
             'email' => 'required',
-			'work_phone',
+            'work_phone',
             'mobile_phone' => 'required',
-			'cancer_type_id' => 'required',
-			'notes',
-		]);
+            'cancer_type_id' => 'required',
+            'notes',
+        ]);
 
         Volunteer::create($request->all());
 
@@ -119,10 +131,10 @@ class VolunteerController extends Controller
             'state' => 'required',
             'zip' => 'required',
             'email' => 'required',
-			'work_phone',
+            'work_phone',
             'mobile_phone' => 'required',
-			'cancer_type_id' => 'required',
-			'notes',
+            'cancer_type_id' => 'required',
+            'notes',
         ]);
 
         Volunteer::find($id)->update($request->all());
@@ -143,4 +155,7 @@ class VolunteerController extends Controller
         return redirect()->route('volunteers.index')
                         ->with('success','volunteer was deleted successfully');
     }
+
+      
+
 }
