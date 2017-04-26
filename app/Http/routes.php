@@ -152,7 +152,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 	//PDF
 	
-	Route::get('pdf/report','PDFcontroller@pdf');
+	Route::get('pdf/report','PDFController@pdf');
 
 	//Excel
 	Route::get('ExportExcel/report', 'ExcelController@ExportExcel');
